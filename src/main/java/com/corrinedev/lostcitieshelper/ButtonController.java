@@ -10,7 +10,7 @@ public class ButtonController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Created Parts/Palletes");
-        FileSplitter.extractPallete();
+        FileSplitter.extractPieces();
 
     }
 }
