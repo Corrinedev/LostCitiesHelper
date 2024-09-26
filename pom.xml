@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.corrinedev.lostcitieshelper/com.corrinedev.lostcitieshelper.HelloApplication
+                                com.corrinedev.lostcitieshelper/com.corrinedev.lostcitieshelper.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
