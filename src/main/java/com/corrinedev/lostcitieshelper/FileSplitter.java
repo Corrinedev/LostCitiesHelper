@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class FileSplitter {
 
     public static void extractPieces() {
-        JOptionPane.showMessageDialog(null,"Choose your lostcities directory, this is NOT the same directory as your file, its the directory your datapack is in, it should go like this ~/lostcities/lostcities");
+        JOptionPane.showMessageDialog(null,"Choose your lostcities directory, this is NOT the same directory as your file, its the directory your datapack is in, choose the root folder NOT the second lostcties folder");
         DirectoryChooser directoryChooser = new DirectoryChooser();
 
         String directory = String.valueOf(directoryChooser.showDialog(null));
