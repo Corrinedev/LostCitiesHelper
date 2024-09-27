@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class TemplateCreator implements Runnable {
-    @Override
-    public void run() {
+public class TemplateCreator {
+
+    public void createTemplates() {
 
         JOptionPane.showMessageDialog(null,"Choose the directory you want to make the lostcities datapack in, if you're using kubejs you will want this to point to your kubejs/data folder");
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -17,7 +17,8 @@ public class TemplateCreator implements Runnable {
         final String[] directory = {String.valueOf(directoryChooser.showDialog(null))};
 
         System.out.println(directory[0]);
-        new Thread(() -> {
+        Runnable templateThread = () -> {
+            Thread.currentThread().setName("TemplateThread");
         if(!(directory[0] == null)) {
 
             try {
@@ -2745,6 +2746,8 @@ public class TemplateCreator implements Runnable {
             }
 
         }
-        }).start();
+        };
+        Thread run = new Thread(templateThread);
+        run.start();
     }
 }

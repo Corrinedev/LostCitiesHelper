@@ -48,7 +48,7 @@ public class ButtonController {
     protected void onTemplateButton() {
 
         TemplateCreator templateCreator = new TemplateCreator();
-        templateCreator.run();
+        templateCreator.createTemplates();
 
     }
     @FXML

@@ -23,8 +23,128 @@ public class EmptyCreator {
         if(!(directory == null)) {
             try {
 
-                Files.writeString(Path.of(directory + "/lostcities/palettes/empty.json"), "");
-                Files.writeString(Path.of(directory + "/lostcities/parts/empty.json"), "");
+                Files.writeString(Path.of(directory + "/lostcities/palettes/empty.json"), """
+                        {
+                          "name": "empty",
+                          "palette": []
+                        }""");
+                Files.writeString(Path.of(directory + "/lostcities/parts/empty.json"), """
+                        {
+                          "name": "empty",
+                          "refpalette": "empty",
+                          "xsize": 16,
+                          "zsize": 16,
+                          "slices": [
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ]
+                          ]
+                        }""");
 
 
 
