@@ -7,24 +7,24 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class TemplateCreator {
-
-    public static void createTemplates() {
+public class TemplateCreator implements Runnable {
+    @Override
+    public void run() {
 
         JOptionPane.showMessageDialog(null,"Choose the directory you want to make the lostcities datapack in, if you're using kubejs you will want this to point to your kubejs/data folder");
         DirectoryChooser directoryChooser = new DirectoryChooser();
 
-        String directory = String.valueOf(directoryChooser.showDialog(null));
+        final String[] directory = {String.valueOf(directoryChooser.showDialog(null))};
 
-        System.out.println(directory);
-
-        if(!(directory == null)) {
+        System.out.println(directory[0]);
+        new Thread(() -> {
+        if(!(directory[0] == null)) {
 
             try {
-                Files.createDirectory(Path.of(directory + "/lostcities"));
-                Files.createDirectory(Path.of(directory + "/lostcities/lostcities"));
-                Files.createDirectory(Path.of(directory + "/lostcities/loot_tables"));
-                Files.writeString(Path.of(directory + "/lostcities/loot_tables/lostcitychest.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/lostcities"));
+                Files.createDirectory(Path.of(directory[0] + "/lostcities/lostcities"));
+                Files.createDirectory(Path.of(directory[0] + "/lostcities/loot_tables"));
+                Files.writeString(Path.of(directory[0] + "/lostcities/loot_tables/lostcitychest.json"), """
                         {
                           "pools": [
                             {
@@ -94,9 +94,9 @@ public class TemplateCreator {
                             }
                           ]
                         }""");
-                directory = directory + "/lostcities/lostcities";
-                Files.createDirectory(Path.of(directory + "/buildings"));
-                Files.writeString(Path.of(directory + "/buildings/cabin.json"), """
+                directory[0] = directory[0] + "/lostcities/lostcities";
+                Files.createDirectory(Path.of(directory[0] + "/buildings"));
+                Files.writeString(Path.of(directory[0] + "/buildings/cabin.json"), """
                         {
                           "filler": "#",
                           "rubble": "}",
@@ -108,7 +108,7 @@ public class TemplateCreator {
                             }
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/buildings/building_example.json"), """
+                Files.writeString(Path.of(directory[0] + "/buildings/building_example.json"), """
                         {
                           "filler": "#",
                           "rubble": "}",
@@ -131,15 +131,15 @@ public class TemplateCreator {
                             }
                           ]
                         }""");
-                Files.createDirectory(Path.of(directory + "/citystyles"));
-                Files.writeString(Path.of(directory + "/citystyles/citystyle_config.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/citystyles"));
+                Files.writeString(Path.of(directory[0] + "/citystyles/citystyle_config.json"), """
                         {
                           "streetblocks": {
                             "width": 8
                           }
                         }
                         """);
-                Files.writeString(Path.of(directory + "/citystyles/citystyle_common.json"), """
+                Files.writeString(Path.of(directory[0] + "/citystyles/citystyle_common.json"), """
                         {
                             "inherit": "citystyle_config",
                             "stuff_tags": [
@@ -234,8 +234,8 @@ public class TemplateCreator {
                                 ]
                             }
                         }""");
-                Files.createDirectory(Path.of(directory + "/conditions"));
-                Files.writeString(Path.of(directory + "/conditions/easymobs.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/conditions"));
+                Files.writeString(Path.of(directory[0] + "/conditions/easymobs.json"), """
                         {
                           "values": [
                             {
@@ -245,7 +245,7 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.writeString(Path.of(directory + "/conditions/chestloot.json"), """
+                Files.writeString(Path.of(directory[0] + "/conditions/chestloot.json"), """
                         {
                             "values": [
                                 {
@@ -254,8 +254,8 @@ public class TemplateCreator {
                                 }
                             ]
                         }""");
-                Files.createDirectory(Path.of(directory + "/multibuildings"));
-                Files.writeString(Path.of(directory + "/multibuildings/multi_example.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/multibuildings"));
+                Files.writeString(Path.of(directory[0] + "/multibuildings/multi_example.json"), """
                         {
                           "dimx": 2,
                           "dimz": 2,
@@ -271,8 +271,8 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.createDirectory(Path.of(directory + "/palettes"));
-                Files.writeString(Path.of(directory + "/palettes/rails.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/palettes"));
+                Files.writeString(Path.of(directory[0] + "/palettes/rails.json"), """
                         {
                           "palette": [
                             {
@@ -326,7 +326,7 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.writeString(Path.of(directory + "/palettes/glass_side_variant_bricks.json"), """
+                Files.writeString(Path.of(directory[0] + "/palettes/glass_side_variant_bricks.json"), """
                         {
                           "palette": [
                             {
@@ -336,7 +336,7 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.writeString(Path.of(directory + "/palettes/glass_full.json"), """
+                Files.writeString(Path.of(directory[0] + "/palettes/glass_full.json"), """
                         {
                           "palette": [
                             {
@@ -354,7 +354,7 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.writeString(Path.of(directory + "/palettes/bricks_standard.json"), """
+                Files.writeString(Path.of(directory[0] + "/palettes/bricks_standard.json"), """
                         {
                           "palette": [
                             {
@@ -380,7 +380,7 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.writeString(Path.of(directory + "/palettes/default_desert.json"), """
+                Files.writeString(Path.of(directory[0] + "/palettes/default_desert.json"), """
                         {
                           "palette": [
                             {
@@ -503,7 +503,7 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.writeString(Path.of(directory + "/palettes/default.json"), """
+                Files.writeString(Path.of(directory[0] + "/palettes/default.json"), """
                         {
                           "palette": [
                             {
@@ -614,7 +614,7 @@ public class TemplateCreator {
                             }
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/palettes/common.json"), """
+                Files.writeString(Path.of(directory[0] + "/palettes/common.json"), """
                         {
                           "palette": [
                             {
@@ -851,8 +851,124 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.createDirectory(Path.of(directory + "/parts"));
-                Files.writeString(Path.of(directory + "/parts/raildungeon1.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/parts"));
+                Files.writeString(Path.of(directory[0] + "/parts/empty.json"), """
+                        {
+                          "name": "empty",
+                          "xsize": 16,
+                          "zsize": 16,
+                          "slices": [
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "        ~       ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ],
+                            [
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                ",
+                              "                "
+                            ]
+                          ]
+                        }""");
+                Files.writeString(Path.of(directory[0] + "/parts/raildungeon1.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -968,7 +1084,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/cabin.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/cabin.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -1159,7 +1275,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/fountain_example.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/fountain_example.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -1202,7 +1318,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/park_example.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/park_example.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -1270,7 +1386,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/stairs1.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/stairs1.json"), """
                         {
                           "meta": [
                             {
@@ -1377,7 +1493,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/stairs2.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/stairs2.json"), """
                         {
                           "meta": [
                             {
@@ -1502,7 +1618,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/stairsbig.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/stairsbig.json"), """
                         {
                           "meta": [
                             {
@@ -1617,7 +1733,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/stairsnormal.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/stairsnormal.json"), """
                         {
                           "meta": [
                             {
@@ -1725,7 +1841,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/building_front_example.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/building_front_example.json"), """
                         {
                           "xsize": 2,
                           "zsize": 16,
@@ -1804,7 +1920,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/bridge_open.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/bridge_open.json"), """
                         {
                           "meta": [
                             {
@@ -1889,7 +2005,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/bridge_covered.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/bridge_covered.json"), """
                         {
                           "meta": [
                             {
@@ -2028,7 +2144,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/building1_1.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/building1_1.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -2143,7 +2259,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/building1_2.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/building1_2.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -2258,7 +2374,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/building1_3.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/building1_3.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -2373,7 +2489,7 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.writeString(Path.of(directory + "/parts/top1x1_1.json"), """
+                Files.writeString(Path.of(directory[0] + "/parts/top1x1_1.json"), """
                         {
                           "xsize": 16,
                           "zsize": 16,
@@ -2488,16 +2604,16 @@ public class TemplateCreator {
                             ]
                           ]
                         }""");
-                Files.createDirectory(Path.of(directory + "/scattered"));
-                Files.writeString(Path.of(directory + "/scattered/cabin.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/scattered"));
+                Files.writeString(Path.of(directory[0] + "/scattered/cabin.json"), """
                         {
                           "buildings": [ "cabin" ],
                           "terrainheight": "highest",
                           "terrainfix": "none",
                           "heightoffset": -3
                         }""");
-                Files.createDirectory(Path.of(directory + "/stuff"));
-                Files.writeString(Path.of(directory + "/stuff/cobweb.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/stuff"));
+                Files.writeString(Path.of(directory[0] + "/stuff/cobweb.json"), """
                         {
                           "tags": ["rubble"],
                           "column": "\\\\",
@@ -2511,8 +2627,8 @@ public class TemplateCreator {
                             ]
                           }
                         }""");
-                Files.createDirectory(Path.of(directory + "/styles"));
-                Files.writeString(Path.of(directory + "/styles/desert.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/styles"));
+                Files.writeString(Path.of(directory[0] + "/styles/desert.json"), """
                         {
                           "randompalettes": [
                             [
@@ -2530,7 +2646,7 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.writeString(Path.of(directory + "/styles/standard.json"), """
+                Files.writeString(Path.of(directory[0] + "/styles/standard.json"), """
                         {
                           "randompalettes": [
                             [
@@ -2566,8 +2682,8 @@ public class TemplateCreator {
                           ]
                         }
                         """);
-                Files.createDirectory(Path.of(directory + "/worldstyles"));
-                Files.writeString(Path.of(directory + "/worldstyles/standard.json"), """
+                Files.createDirectory(Path.of(directory[0] + "/worldstyles"));
+                Files.writeString(Path.of(directory[0] + "/worldstyles/standard.json"), """
                         {
                             "outsidestyle": "outside",
                             "multisettings": {
@@ -2628,6 +2744,6 @@ public class TemplateCreator {
             }
 
         }
-
+        }).start();
     }
 }

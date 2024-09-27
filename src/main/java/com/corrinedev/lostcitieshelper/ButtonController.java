@@ -4,11 +4,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.stage.FileChooser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
 
 public class ButtonController {
     @FXML
@@ -43,22 +47,25 @@ public class ButtonController {
     @FXML
     protected void onTemplateButton() {
 
-        TemplateCreator.createTemplates();
+        TemplateCreator templateCreator = new TemplateCreator();
+        templateCreator.run();
 
     }
     @FXML
     protected void onHyperlink() {
 
-        Desktop desktop = Desktop.getDesktop();
-        try {
-            if(System.getProperty("os.name") == "Windows 10" || System.getProperty("os.name") == "Windows 11") {
-                desktop.browse(URI.create("https://github.com/Corrinedev"));
-            } else {
-                JOptionPane.showMessageDialog(null, "This action is not supported on your OS!");
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if( Desktop.isDesktopSupported() )
+        {
+            new Thread(() -> {
+                try {
+                    Desktop.getDesktop().browse( new URI( "https://github.com/Corrinedev" ) );
+                } catch (IOException | URISyntaxException e1) {
+                    e1.printStackTrace();
+                }
+            }).start();
+       //     new Thread(() -> {
+            //thread example
+      //      }).start();
         }
-
     }
 }
