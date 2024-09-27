@@ -625,7 +625,7 @@ public class TemplateCreator {
                             {
                               "char": "4",
                               "block": "minecraft:spawner",
-                              "mob": "hardmobs"
+                              "mob": "easymobs"
                             },
                             {
                               "char": "T",
