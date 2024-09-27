@@ -59,6 +59,7 @@ public class ButtonController {
             new Thread(() -> {
                 try {
                     Desktop.getDesktop().browse( new URI( "https://github.com/Corrinedev" ) );
+                    System.out.println(Thread.currentThread());
                 } catch (IOException | URISyntaxException e1) {
                     e1.printStackTrace();
                 }

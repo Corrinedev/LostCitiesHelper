@@ -2737,6 +2737,7 @@ public class TemplateCreator implements Runnable {
                                 }
                             ]
                         }""");
+                System.out.println(Thread.currentThread());
 
 
             } catch (IOException e) {
