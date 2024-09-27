@@ -225,6 +225,12 @@ public class TemplateCreator {
                                         "factor": 1,
                                         "value": "park_example"
                                     }
+                                ],
+                                "raildungeons": [
+                                  {
+                                    "factor": 1.0,
+                                    "value": "rail_dungeon1"
+                                  }
                                 ]
                             }
                         }""");
@@ -266,6 +272,60 @@ public class TemplateCreator {
                         }
                         """);
                 Files.createDirectory(Path.of(directory + "/palettes"));
+                Files.writeString(Path.of(directory + "/palettes/rails.json"), """
+                        {
+                          "palette": [
+                            {
+                              "char": "k",
+                              "block": "minecraft:rail[shape=north_south]"
+                            },
+                            {
+                              "char": "e",
+                              "block": "minecraft:rail[shape=east_west]"
+                            },
+                            {
+                              "char": "j",
+                              "block": "minecraft:rail[shape=ascending_east]"
+                            },
+                            {
+                              "char": "q",
+                              "block": "minecraft:rail[shape=south_east]"
+                            },
+                            {
+                              "char": "s",
+                              "block": "minecraft:rail[shape=south_west]"
+                            },
+                            {
+                              "char": "r",
+                              "block": "minecraft:rail[shape=north_west]"
+                            },
+                            {
+                              "char": "n",
+                              "block": "minecraft:rail[shape=north_east]"
+                            },
+                            {
+                              "char": "m",
+                              "block": "minecraft:powered_rail[powered=true,shape=north_south]"
+                            },
+                            {
+                              "char": "E",
+                              "block": "minecraft:powered_rail[powered=true,shape=ascending_south]"
+                            },
+                            {
+                              "char": "H",
+                              "block": "minecraft:powered_rail[powered=true,shape=ascending_north]"
+                            },
+                            {
+                              "char": "f",
+                              "block": "minecraft:powered_rail[powered=true,shape=east_west]"
+                            },
+                            {
+                              "char": "i",
+                              "block": "minecraft:powered_rail[powered=true,shape=ascending_east]"
+                            }
+                          ]
+                        }
+                        """);
                 Files.writeString(Path.of(directory + "/palettes/glass_side_variant_bricks.json"), """
                         {
                           "palette": [
@@ -792,6 +852,122 @@ public class TemplateCreator {
                         }
                         """);
                 Files.createDirectory(Path.of(directory + "/parts"));
+                Files.writeString(Path.of(directory + "/parts/raildungeon1.json"), """
+                        {
+                          "xsize": 16,
+                          "zsize": 16,
+                          "refpalette": "rails",
+                          "slices": [
+                            [
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy"
+                            ],
+                            [
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "y4yyyyyyyyyyyy1y",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "y4yyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "y1yyyyyyyyyyyy1y",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy"
+                            ],
+                            [
+                              "yyyyyy~~yyyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyyC~~~~~yyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyyC~~~~~~!!!yyy",
+                              "yyy~~~~~~~!!4yyy",
+                              "yyyC~~~~~~!!!yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyyC~~~~~yyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyyyyy~~yyyyyyyy"
+                            ],
+                            [
+                              "yyyyyy~~yyyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~yyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~!!!yyy",
+                              "yyy~~~~~~~!!!yyy",
+                              "yyy~~~~~~~!!!yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~yyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyyyyy~~yyyyyyyy"
+                            ],
+                            [
+                              "yyyyyyyyyyyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~yyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~yyyyyyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyy~~~~~~~~~~yyy",
+                              "yyyyyyyyyyyyyyyy"
+                            ],
+                            [
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy",
+                              "yyyyyyyyyyyyyyyy"
+                            ]
+                          ]
+                        }""");
                 Files.writeString(Path.of(directory + "/parts/cabin.json"), """
                         {
                           "xsize": 16,

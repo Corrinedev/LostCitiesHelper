@@ -39,7 +39,7 @@ public class FileSplitter {
                 String pallete = palleteexported1 + palleteexported2 + "] }";
 
                 //System.out.println(pallete);
-                Files.writeString(Path.of(directory + "/" + file.getName()), pallete);
+                Files.writeString(Path.of(directory + "/lostcities/palettes/" + file.getName()), pallete);
 
 
                 String partexported1 = fileContents.substring(fileContents.indexOf("    \"xsize\": 16,"), fileContents.indexOf("      ]\n" +
@@ -52,7 +52,7 @@ public class FileSplitter {
                         "  }";
 
                 System.out.println(part);
-                Files.writeString(Path.of(directory + "/" + "part_" + file.getName()), part);
+                Files.writeString(Path.of(directory + "/lostcities/parts/" + "part_" + file.getName()), part);
 
 
 

@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -36,7 +37,7 @@ public class ButtonController {
     @FXML
     protected void onEmptyButton() {
 
-
+        JOptionPane.showMessageDialog(null, "this does nothing right now");
 
     }
     @FXML
