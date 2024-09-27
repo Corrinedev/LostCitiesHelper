@@ -37,7 +37,7 @@ public class ButtonController {
     @FXML
     protected void onEmptyButton() {
 
-        JOptionPane.showMessageDialog(null, "this does nothing right now");
+        BuildingCreator.createBuilding();
 
     }
     @FXML
@@ -51,7 +51,11 @@ public class ButtonController {
 
         Desktop desktop = Desktop.getDesktop();
         try {
-            desktop.browse(URI.create("https://github.com/Corrinedev"));
+            if(System.getProperty("os.name") == "Windows 10" || System.getProperty("os.name") == "Windows 11") {
+                desktop.browse(URI.create("https://github.com/Corrinedev"));
+            } else {
+                JOptionPane.showMessageDialog(null, "This action is not supported on your OS!");
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

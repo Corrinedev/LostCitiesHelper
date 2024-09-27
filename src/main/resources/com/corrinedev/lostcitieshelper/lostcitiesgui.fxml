@@ -37,13 +37,13 @@
             </Button>
             <Button fx:id="templateButton" layoutX="18.0" layoutY="18.0" mnemonicParsing="false" onAction="#onTemplateButton" prefHeight="50.0" prefWidth="226.0" style="-fx-background-color: #475269; -fx-background-radius: 12;" text="Create template datapack" textFill="#d1d4d9">
                <font>
-                  <Font name="Leelawadee UI Bold" size="16.0" />
+                  <Font name="Leelawadee UI Bold" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="emptyButton" layoutX="18.0" layoutY="79.0" mnemonicParsing="false" onAction="#onEmptyButton" prefHeight="50.0" prefWidth="226.0" style="-fx-background-color: #475269; -fx-background-radius: 12;" text="Empty parts/palettes" textFill="#d1d4d9">
+            <Button fx:id="emptyButton" layoutX="18.0" layoutY="79.0" mnemonicParsing="false" onAction="#onEmptyButton" prefHeight="50.0" prefWidth="226.0" style="-fx-background-color: #475269; -fx-background-radius: 12;" text="Create 1 floor building" textFill="#d1d4d9">
                <font>
                   <Font name="Leelawadee UI Bold" size="16.0" />
                </font>
