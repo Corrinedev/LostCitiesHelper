@@ -10,8 +10,8 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("lostcitiesgui.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 224, 360);
         stage.setTitle("Lost Cities Helper");
         stage.setResizable(false);
         stage.setScene(scene);
