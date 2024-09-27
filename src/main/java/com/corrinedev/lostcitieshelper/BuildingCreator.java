@@ -11,7 +11,7 @@ import java.nio.file.Path;
 public class BuildingCreator {
 
     public static void createBuilding() {
-
+        JOptionPane.showMessageDialog(null,"Choose a PART file and your lostcities root directory");
         DirectoryChooser directoryChooser = new DirectoryChooser();
         String directory = directoryChooser.createDirectory(true);
         FileChooser fileChooser = new FileChooser();
