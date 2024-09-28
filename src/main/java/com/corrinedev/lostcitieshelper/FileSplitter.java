@@ -14,17 +14,24 @@ import java.util.Arrays;
 public class FileSplitter {
 
     public static void extractPieces() {
+        //Not Loop
         JOptionPane.showMessageDialog(null,"Choose your lostcities directory, this is NOT the same directory as your file, its the directory your datapack is in, choose the root folder NOT the second lostcties folder");
         DirectoryChooser directoryChooser = new DirectoryChooser();
 
         String directory = String.valueOf(directoryChooser.showDialog(null));
+        File file = null;
+        try {
+            file = File.createTempFile("tempfile","e");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println(directory);
-
+    while(!(file == null)) {
         if(!(directory == null)) {
 
             FileChooser fileChooser = new FileChooser();
-            File file = fileChooser.showOpenDialog(null);
+            file = fileChooser.showOpenDialog(null);
             String filePath = file.getAbsolutePath();
             System.out.println(filePath);
             String fileContents;
@@ -62,7 +69,7 @@ public class FileSplitter {
                 throw new RuntimeException(e);
             }
 
-
+            }
         }
 
 

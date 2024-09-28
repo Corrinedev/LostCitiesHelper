@@ -175,6 +175,7 @@ public class TemplateCreator {
                                         "value": "building_example"
                                     }
                                 ],
+                                "_comment": "buildinglocater",
                                 "multibuildings": [
                                     {
                                         "factor": 0.3,
