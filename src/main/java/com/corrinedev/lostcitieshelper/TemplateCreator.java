@@ -105,7 +105,7 @@ public class TemplateCreator {
                           "maxfloors": 1,
                           "parts": [
                             {
-                              "part": "cabin"
+                              "part": "lostcities:cabin"
                             }
                           ]
                         }""");
@@ -116,19 +116,19 @@ public class TemplateCreator {
                           "parts": [
                             {
                               "top": false,
-                              "part": "building1_1"
+                              "part": "lostcities:building1_1"
                             },
                             {
                               "top": false,
-                              "part": "building1_2"
+                              "part": "lostcities:building1_2"
                             },
                             {
                               "top": false,
-                              "part": "building1_3"
+                              "part": "lostcities:building1_3"
                             },
                             {
                               "top": true,
-                              "part": "top1x1_1"
+                              "part": "lostcities:top1x1_1"
                             }
                           ]
                         }""");
