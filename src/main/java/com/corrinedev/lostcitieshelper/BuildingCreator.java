@@ -30,20 +30,20 @@ public class BuildingCreator {
                     "\t  \"top\": false,\n" +
                     "      \"cellar\": false,\n" +
                     "      \"ground\": true,\t\n" +
-                    "      \"part\": \"" + file.getName().substring(0, file.getName().indexOf(".json")) + "\"\n" +
+                    "      \"part\": \"" + "lostcities:" + file.getName().substring(0, file.getName().indexOf(".json")) + "\"\n" +
                     "\n" +
                     "    },\n" +
                     "\t{\n" +
                     "\t  \"top\": false,\n" +
                     "      \"cellar\": false,\n" +
                     "      \"ground\": false,\n" +
-                    "      \"part\": \"empty\"\n" +
+                    "      \"part\": \"lostcities:empty\"\n" +
                     "    },\n" +
                     "\t{\n" +
                     "      \"top\": true,\n" +
                     "      \"cellar\": false,\n" +
                     "      \"ground\": false,\t\n" +
-                    "      \"part\": \"empty\"\n" +
+                    "      \"part\": \"lostcities:empty\"\n" +
                     "    }\n" +
                     "  ]\n" +
                     "}");

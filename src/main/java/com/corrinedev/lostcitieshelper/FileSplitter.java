@@ -47,7 +47,7 @@ public class FileSplitter {
                 //String partexported2 = fileContents.substring(fileContents.indexOf("    \"palette\": ["), fileContents.indexOf("    ]\n" +
                 //        "  },"));
                 String[] filename = file.getName().split(".");
-                String part = "{\n" + "\t\"refpalette\": \"" + file.getName().substring(0 , file.getName().indexOf(".json")) + "\",\n" + partexported1 + "\n" + "      ]\n" +
+                String part = "{\n" + "\t\"refpalette\": \"" + "lostcities:" + file.getName().substring(0 , file.getName().indexOf(".json")) + "\",\n" + partexported1 + "\n" + "      ]\n" +
                         "    ]\n" +
                         "  }";
 
