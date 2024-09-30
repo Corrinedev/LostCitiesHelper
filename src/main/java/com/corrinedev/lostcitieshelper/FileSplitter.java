@@ -59,7 +59,7 @@ public class FileSplitter {
                         "  }";
 
                 System.out.println(part);
-                Files.writeString(Path.of(directory + "/lostcities/parts/" + "part_" + file.getName()), part);
+                Files.writeString(Path.of(directory + "/lostcities/parts/" + file.getName()), part);
 
 
 

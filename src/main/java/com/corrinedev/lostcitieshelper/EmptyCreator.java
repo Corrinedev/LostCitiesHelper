@@ -24,127 +24,129 @@ public class EmptyCreator {
             try {
 
                 Files.writeString(Path.of(directory + "/lostcities/palettes/empty.json"), """
-                        {
-                          "name": "empty",
-                          "palette": []
-                        }""");
+{    "palette": [
+      {
+        "char": "e",
+        "block": "minecraft:structure_void"
+      }
+] }""");
                 Files.writeString(Path.of(directory + "/lostcities/parts/empty.json"), """
-                        {
-                          "name": "empty",
-                          "refpalette": "empty",
-                          "xsize": 16,
-                          "zsize": 16,
-                          "slices": [
-                            [
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "        ~       ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                "
-                            ],
-                            [
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "        ~       ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                "
-                            ],
-                            [
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "        ~       ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                "
-                            ],
-                            [
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "        ~       ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                "
-                            ],
-                            [
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "        ~       ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                "
-                            ],
-                            [
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                ",
-                              "                "
-                            ]
-                          ]
-                        }""");
+{
+	"refpalette": "lostcities:empty",
+    "xsize": 16,
+    "zsize": 16,
+    "slices": [
+      [
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee"
+      ],
+      [
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee"
+      ],
+      [
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee"
+      ],
+      [
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee"
+      ],
+      [
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee"
+      ],
+      [
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee",
+        "eeeeeeeeeeeeeeee"
+
+      ]
+    ]
+  }""");
 
 
 

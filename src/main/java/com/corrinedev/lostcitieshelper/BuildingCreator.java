@@ -39,33 +39,34 @@ public class BuildingCreator {
             createbuildings.addBuilding(file.getName().substring(0, file.getName().indexOf(".json")), building);
             Files.createFile(Path.of(directory + "/lostcities/buildings/" + file.getName()));
             Files.writeString(Path.of(directory + "/lostcities/buildings/" + file.getName()), "{\n" +
-                    "  \"filler\": \"#\",\n" +
-                    "  \"rubble\": \"}\",\n" +
-                    "  \"minfloors\": 1,\n" +
-                    "  \"maxfloors\": 1,\n" +
-                    "  \"parts\": [\n" +
-                    "    {\n" +
-                    "\t  \"top\": false,\n" +
-                    "      \"cellar\": false,\n" +
-                    "      \"ground\": true,\t\n" +
-                    "      \"part\": \"" + "lostcities:" + file.getName().substring(0, file.getName().indexOf(".json")) + "\"\n" +
-                    "\n" +
-                    "    },\n" +
-                    "\t{\n" +
-                    "\t  \"top\": false,\n" +
-                    "      \"cellar\": false,\n" +
-                    "      \"ground\": false,\n" +
-                    "      \"part\": \"lostcities:empty\"\n" +
-                    "    },\n" +
-                    "\t{\n" +
-                    "      \"top\": true,\n" +
-                    "      \"cellar\": false,\n" +
-                    "      \"ground\": false,\t\n" +
-                    "      \"part\": \"lostcities:empty\"\n" +
-                    "    }\n" +
-                    "  ]\n" +
-                    "}");
-
+                                                                                              "  \"filler\": \"#\",\n" +
+                                                                                              "  \"rubble\": \"}\",\n" +
+                                                                                              "  \"allowDoors\": false,\n" +
+                                                                                              "  \"allowFillers\": false,\n" +
+                                                                                              "  \"maxfloors\": 1,\n" +
+                                                                                              "  \"maxcellars\": 0,\n" +
+                                                                                              "  \"minfloors\": 1,\n" +
+                                                                                              "  \"parts\": [\n" +
+                                                                                              "    {\n" +
+                                                                                              "\t  \"top\": false,\n" +
+                                                                                              "      \"cellar\": false,\n" +
+                                                                                              "      \"ground\": true,\t\n" +
+                                                                                              "      \"part\": \"lostcities:" + file.getName().substring(0, file.getName().indexOf(".json")) +"\"\n" +
+                                                                                              "    },\n" +
+                                                                                              "\t{\n" +
+                                                                                              "\t  \"top\": false,\n" +
+                                                                                              "      \"cellar\": false,\n" +
+                                                                                              "      \"ground\": false,\n" +
+                                                                                              "      \"part\": \"lostcities:empty\"\n" +
+                                                                                              "    },\n" +
+                                                                                              "\t{\n" +
+                                                                                              "      \"top\": true,\n" +
+                                                                                              "      \"cellar\": false,\n" +
+                                                                                              "      \"ground\": false,\t\n" +
+                                                                                              "      \"part\": \"lostcities:empty\"\n" +
+                                                                                              "    }\n" +
+                                                                                              "  ]\n" +
+                                                                                              "}");
 
         } catch (IOException e) {
             System.out.println("File cannot be null! r you closed out of the file chooser");
